@@ -29,34 +29,23 @@ npm run preview
 
 ## Deploy
 
-Publicado via **GitHub Pages**, com deploy automático a cada push no branch `main` (workflow em `.github/workflows/deploy-pages.yml`), usando o domínio próprio **portfolioleticia.com.br**.
+Publicado via **Netlify** (gratuito), com um nome próprio escolhido por você (ex: `ticya-portfolio.netlify.app`) — sem depender do nome de nenhuma conta do GitHub na URL.
 
-**Configuração no GitHub (uma vez só):**
-1. No repositório, vá em **Settings → Pages**
-2. Em "Source", selecione **GitHub Actions**
-3. Em "Custom domain", confirme que está `portfolioleticia.com.br` (o arquivo `public/CNAME` já garante isso a cada deploy)
-4. Faça push para `main` — o workflow builda e publica automaticamente
+**Opção 1 — conectando o repositório do GitHub (recomendado, atualiza sozinho a cada push):**
+1. Crie uma conta gratuita em [netlify.com](https://netlify.com)
+2. Clique em **"Add new site" → "Import an existing project"**
+3. Escolha **GitHub** e selecione o repositório `Portif-rio_Leticia`
+4. Configurações de build (o Netlify costuma detectar sozinho, mas confirme):
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+5. Clique em **Deploy**
+6. Depois do primeiro deploy, vá em **Site settings → Change site name** e escolha o nome que quiser (ex: `ticya-portfolio`) — a URL final fica `https://ticya-portfolio.netlify.app`
+7. A partir daí, todo `git push` para `main` atualiza o site sozinho
 
-**Configuração no registrador do domínio (Registro.br ou onde o domínio foi comprado) — ESSA PARTE NÃO FICA NO GITHUB:**
+**Opção 2 — mais rápida, sem conectar o GitHub (deploy manual):**
+1. No seu computador, rode `npm install` e depois `npm run build` dentro da pasta do projeto
+2. Isso gera uma pasta `dist/`
+3. Em [app.netlify.com/drop](https://app.netlify.com/drop), arraste a pasta `dist/` inteira
+4. O site fica no ar em segundos, com uma URL gerada automaticamente (que você pode trocar depois em Site settings)
 
-O domínio precisa de registros DNS apontando para o GitHub Pages. No painel de DNS do domínio, adicione:
-
-Registros tipo A (para o domínio raiz `portfolioleticia.com.br`):
-```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```
-
-Opcionalmente, registros AAAA (IPv6):
-```
-2606:50c0:8000::153
-2606:50c0:8001::153
-2606:50c0:8002::153
-2606:50c0:8003::153
-```
-
-Se quiser que `www.portfolioleticia.com.br` também funcione, adicione um registro CNAME apontando `www` para `paulohenriqueph12335-lang.github.io`.
-
-A propagação de DNS pode levar de alguns minutos até 24-48h. Enquanto isso, o GitHub mostra "DNS Check in Progress" nas configurações de Pages — isso é esperado até o DNS propagar.
+**Se no futuro você registrar um domínio de verdade** (ex: comprar `portfolioleticia.com.br`), o Netlify também aceita domínio próprio gratuitamente — só é preciso pagar o registro do domínio em si, não a hospedagem.

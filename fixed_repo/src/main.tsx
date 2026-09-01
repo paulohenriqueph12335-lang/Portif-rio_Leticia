@@ -6,8 +6,8 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* Sem basename: o site usa domínio próprio (portfolioleticia.com.br)
-        servido na raiz — não precisa de subcaminho como em github.io/repo/ */}
+    {/* Sem basename: "user page" gratuita do GitHub, servida na raiz
+        (https://paulohenriqueph12335-lang.github.io/) */}
     <BrowserRouter>
       <App />
     </BrowserRouter>
