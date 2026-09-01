@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta — Design System Fase 05 (rosa dominante) */
+  --color-base: #FBF0EE;
+  --color-base-alt: #FDF8F0;
+  --color-rosa: #F0C9D2;
+  --color-rosa-claro: #F6DCE2;
+  --color-text-primary: #5C2C39;
+  --color-text-secondary: #8A5F6B;
+  --color-accent-amarelo: #E9B84D;
+  --color-accent-azul: #84C9E3;
+  --color-accent-verde: #A9BBA0;
+  --color-personagem: #E8B0BE;
+  --color-personagem-quente: #C97B4F;
+  --color-borda: rgba(90, 74, 58, 0.16);
+
+  /* Tipografia — arquitetura de 5 fontes (Fase 05) */
+  --font-narrativa: "Fraunces", serif;
+  --font-titulo: "Playfair Display", serif;
+  --font-corpo: "Mulish", sans-serif;
+  --font-rotulo: "Karla", sans-serif;
+  --font-ui: "Quicksand", sans-serif;
+
+  /* Raio de borda */
+  --radius-card: 20px;
+  --radius-pill: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-corpo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
