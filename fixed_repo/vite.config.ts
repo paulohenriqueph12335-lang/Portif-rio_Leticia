@@ -2,10 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// Base path necessário para GitHub Pages, já que o site fica em
-// https://<usuario>.github.io/Portif-rio_Leticia/ (não na raiz do domínio).
+// Base "/" porque o site usa domínio próprio (portfolioleticia.com.br),
+// servido na raiz do domínio — não em github.io/nome-do-repositorio/.
 export default defineConfig({
-  base: '/Portif-rio_Leticia/',
+  base: '/',
   plugins: [react(), tailwindcss()],
 })
+
 

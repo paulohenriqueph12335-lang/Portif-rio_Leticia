@@ -6,9 +6,9 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* basename precisa bater com o "base" do vite.config.ts, pois o site
-        vive em /Portif-rio_Leticia/ no GitHub Pages, não na raiz do domínio */}
-    <BrowserRouter basename="/Portif-rio_Leticia/">
+    {/* Sem basename: o site usa domínio próprio (portfolioleticia.com.br)
+        servido na raiz — não precisa de subcaminho como em github.io/repo/ */}
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>,

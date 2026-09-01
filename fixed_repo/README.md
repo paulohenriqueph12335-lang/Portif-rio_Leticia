@@ -29,12 +29,34 @@ npm run preview
 
 ## Deploy
 
-Publicado via **GitHub Pages**, com deploy automático a cada push no branch `main` (workflow em `.github/workflows/deploy-pages.yml`).
+Publicado via **GitHub Pages**, com deploy automático a cada push no branch `main` (workflow em `.github/workflows/deploy-pages.yml`), usando o domínio próprio **portfolioleticia.com.br**.
 
-**Configuração necessária no GitHub (uma vez só):**
+**Configuração no GitHub (uma vez só):**
 1. No repositório, vá em **Settings → Pages**
-2. Em "Source", selecione **GitHub Actions** (não "Deploy from a branch")
-3. Faça um push para `main` — o workflow builda e publica automaticamente
-4. O site fica disponível em `https://<seu-usuário>.github.io/Portif-rio_Leticia/`
+2. Em "Source", selecione **GitHub Actions**
+3. Em "Custom domain", confirme que está `portfolioleticia.com.br` (o arquivo `public/CNAME` já garante isso a cada deploy)
+4. Faça push para `main` — o workflow builda e publica automaticamente
 
-**Importante:** o `base` no `vite.config.ts` e o `basename` no `src/main.tsx` estão configurados para `/Portif-rio_Leticia/`, que precisa bater exatamente com o nome do repositório no GitHub. Se o nome do repositório mudar, esses dois valores precisam ser atualizados juntos.
+**Configuração no registrador do domínio (Registro.br ou onde o domínio foi comprado) — ESSA PARTE NÃO FICA NO GITHUB:**
+
+O domínio precisa de registros DNS apontando para o GitHub Pages. No painel de DNS do domínio, adicione:
+
+Registros tipo A (para o domínio raiz `portfolioleticia.com.br`):
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+Opcionalmente, registros AAAA (IPv6):
+```
+2606:50c0:8000::153
+2606:50c0:8001::153
+2606:50c0:8002::153
+2606:50c0:8003::153
+```
+
+Se quiser que `www.portfolioleticia.com.br` também funcione, adicione um registro CNAME apontando `www` para `paulohenriqueph12335-lang.github.io`.
+
+A propagação de DNS pode levar de alguns minutos até 24-48h. Enquanto isso, o GitHub mostra "DNS Check in Progress" nas configurações de Pages — isso é esperado até o DNS propagar.
