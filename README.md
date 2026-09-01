@@ -14,7 +14,13 @@ Antes do primeiro deploy, no repositório do GitHub acesse **Settings → Pages*
 e selecione **GitHub Actions** como fonte de publicação. Em seguida, envie uma
 das branches configuradas ou execute o workflow manualmente.
 
-Para um repositório chamado `Portif-rio_Leticia` da conta
-`paulohenriqueph12335-lang`, o endereço de publicação será:
+O domínio personalizado de publicação é:
 
-<https://paulohenriqueph12335-lang.github.io/Portif-rio_Leticia/>
+<https://www.leticia.com/>
+
+### DNS necessário
+
+No provedor do domínio, crie um registro **CNAME** para `www` apontando para
+`paulohenriqueph12335-lang.github.io`. Depois que o deploy terminar, habilite
+**Enforce HTTPS** em **Settings → Pages**. A URL pública continuará sendo
+`https://www.leticia.com`, sem o nome da conta do GitHub.
