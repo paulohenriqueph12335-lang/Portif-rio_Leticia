@@ -1,14 +1,14 @@
 {
   "id": "./",
-  "name": "leticia.com",
-  "short_name": "leticia.com",
+  "name": "Portfólio Letícia",
+  "short_name": "Letícia",
   "description": "Portfólio Letícia",
   "lang": "pt-BR",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f4f0eb",
+  "theme_color": "#f4f0eb",
   "icons": [
     {
       "src": "icons/icon.svg",
