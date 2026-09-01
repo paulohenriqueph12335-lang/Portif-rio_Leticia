@@ -1,4 +1,4 @@
-const CACHE_NAME = 'leticia-com-v1';
+const CACHE_NAME = 'leticia-com-v2';
 const APP_SHELL = [
   './',
   './index.html',
